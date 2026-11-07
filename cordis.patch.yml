@@ -1,0 +1,4 @@
+# OKF-Token Forge on a DeepSeek Harness profile. Separate from Decision Forge and Skillforge.
+- insert:
+    - id: okf-token-forge
+      name: okf-token-forge
