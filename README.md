@@ -17,9 +17,9 @@ node bin/okf-token-forge.mjs status --root "$PWD"
 node bin/okf-token-forge.mjs lint --root "$PWD"
 ```
 
-`query` refreshes files whose content hash or resolved local edge changed, then caps the answer (200–20000 characters, default 3500). Concepts hold symbols, line counts, and local links (`./`, Rust `mod`, Python `from .`). They do not hold source text. `node_modules`, `target`, `.git`, and lockfiles are skipped.
+`query` refreshes a concept when its source hash, local edges, or rendered text differ, then caps the answer (200–20000 characters, default 3500). Concepts hold symbols, line counts, and local links (`./`, Rust `mod` including `pub mod`, Python `from .`). They do not hold source text or guide prose. Names in the slice are data, not instructions. One compile runs at a time for a bundle; a symlink inside `.okf/` is refused instead of followed. `node_modules`, `target`, `.git`, and lockfiles are skipped.
 
-`status` prints JSON. `compiled` is false until a bundle exists. When it is true, `producer` is `process:okf-token-forge/0.1.0`, `newestSourceMtime` is the newest indexed file time, and `sourceCharactersNotInDefaultQuery` is indexed source bytes minus 3500. That last field is an upper bound against one default query, not a measured session saving. `lintOk` false means do not trust the slice until `lint` is clean.
+`status` prints JSON. `compiled` is false until `.okf/.state.json` and `.okf/index.md` exist, including after an empty compile. When it is true, `producer` is `process:okf-token-forge/0.1.0`, `newestSourceMtime` is the newest indexed file time, and `sourceCharactersNotInDefaultQuery` is indexed source bytes minus 3500. That last field is an upper bound against one default query, not a measured session saving. `lintOk` false means do not trust the slice until `lint` is clean.
 
 Concepts are `generated` by `process:okf-token-forge/0.1.0` and are not `verified`. Use the map to choose a file, then open that file.
 
