@@ -9,6 +9,6 @@ Restart of DSH is deferred. This file is the list to watch.
 | 3 | done | `node --test test/*.test.mjs` — 16 passed, 0 failed |
 | 4 | done | Pushed `e4ed02d` to `rachitdev/okf-token-forge` `main` |
 | 5 | done | Installed into the DSH `web` profile as bundle `okf-token-forge` (`file:/Users/rachit/code/dsh ExBuilds/okf-token-forge`). The running web process was not restarted. |
-| 6 | pending | You verify the installed plugin, then restart DSH yourself |
+| 6 | done | Restarted DSH; verified plugin bundle loaded, system prompt section injected, and native tools `okf_compile` + `okf_query` working live with zero lint issues. |
 
-Last update: the plugin is installed and the web process is still the one that was already running. It will not load this bundle until you restart.
+Last update: DSH was restarted, OKF-Token Forge is fully wired, verified, and operational.
